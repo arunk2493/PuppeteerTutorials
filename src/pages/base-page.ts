@@ -3,12 +3,13 @@ const puppeteer = require("puppeteer");
 
 export default class BasePage {
     page:Page;
+    browser: Browser;
 
 
     async open() {
-        let browser: Browser;
-        browser = await puppeteer.launch({headless: false, slowMo: 10});
-        this.page = await browser.newPage();
+        //let browser: Browser;
+        this.browser = await puppeteer.launch({headless: false, slowMo: 10});
+        this.page = await this.browser.newPage();
         await this.page.setViewport({width: 1366, height: 768});
         return this.page
     }

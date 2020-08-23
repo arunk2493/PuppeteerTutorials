@@ -31,3 +31,7 @@ Then(/^I validate the user profile$/,async ()=>{
     await homePage.takeScreenShot(homePage.page);
     await expect(await homePage.getInnerText(homePage.labelUserName)).to.equal('arunk2493');
 });
+Then(/^I close the browser$/,async ()=>{
+    await homePage.page.close();
+    await homePage.browser.close();
+});

@@ -6,3 +6,4 @@ Feature: Git Hub Login
     Then  I give the valid username and password
     Then  I click on the signin button
     Then  I validate the user profile
+    Then I close the browser

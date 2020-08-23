@@ -31,6 +31,7 @@ describe( "Sample Form", async ()=>{
     });
     afterEach(async ()=>{
         await page.close();
+        await homePage.browser.close();
     })
 });
 
