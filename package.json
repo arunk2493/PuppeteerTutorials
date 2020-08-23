@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ts-mocha ./src/test/home-page.spec.ts --timeout 50000 --reporter mochawesome"
+    "test": "ts-mocha ./src/test/home-page.spec.ts --timeout 50000 --reporter mochawesome",
+    "testapi": "ts-mocha ./src/test/api-testing.spec.ts --reporter mochawesome --overwrite=false",
+    "teste2e": "cucumber-js -p default -f json:cucumber-report.json && exit",
+    "report": "node report.js"
   },
   "repository": {
     "type": "git",
@@ -18,16 +21,25 @@
   "homepage": "https://github.com/arunk2493/PuppeteerTutorials#readme",
   "dependencies": {
     "@types/mocha": "^8.0.3",
+    "@types/node-fetch": "^2.5.7",
     "@types/puppeteer": "^3.0.1",
     "chai": "^4.2.0",
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0",
+    "esm": "^3.2.25",
     "mocha": "^8.1.1",
     "mochawesome": "^6.1.1",
+    "node-fetch": "^2.6.0",
+    "node-fetch-response-matchers": "^1.1.47",
     "puppeteer": "^5.2.1",
     "ts-mocha": "^7.0.0",
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.12"
+    "@types/chai": "^4.2.12",
+    "@types/cucumber": "^4.0.5",
+    "cucumber-tsflow": "^3.2.0",
+    "ts-node": "^8.0.3"
   }
 }
