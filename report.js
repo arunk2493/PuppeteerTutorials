@@ -3,7 +3,7 @@ const options ={
     theme:'bootstrap',
     jsonFile:'cucumber-report.json',
     output:'cucumber-html-result.html',
-    reportSuiteAsScenaros:true,
+    reportSuiteAsScenarios:true,
     launchReport:true,
 }
 reporter.generate(options)

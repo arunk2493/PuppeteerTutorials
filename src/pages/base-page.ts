@@ -4,13 +4,18 @@ const puppeteer = require("puppeteer");
 export default class BasePage {
     page:Page;
     browser: Browser;
-
+    txtUserName: string = 'input[name="login"]'; //or input#login_field or #login_field
+    txtPassword: string = 'input#password';
+    btnSignIn: string = 'input[value="Sign in"]';
 
     async open() {
         //let browser: Browser;
-        this.browser = await puppeteer.launch({headless: false, slowMo: 10});
+        this.browser = await puppeteer.launch({headless: true, slowMo: 10,args:[
+                '--start-fullscreen' // you can also use '--start-fullscreen'
+            ]});
         this.page = await this.browser.newPage();
         await this.page.setViewport({width: 1366, height: 768});
+        await this.page.goto('https://github.com/login');
         return this.page
     }
     async closeBrowser(){
@@ -38,5 +43,19 @@ export default class BasePage {
         const today = new Date();
         const date = today.getDate() + '_' + (today.getMonth() + 1) + '_' + today.getFullYear() + '_' + today.getHours()+ '_' + today.getMinutes()+ '_' + today.getSeconds()+ '_' ;
         await page.screenshot({ path: 'mochawesome-report/screenshots/'+"TestScreenShots"+date+".png"});
+    }
+
+    async loginUser(){
+        const userDetails = require('../data/userdata.json');
+        await this.enterValue(this.txtUserName,userDetails.username);
+        await this.enterValue(this.txtPassword,userDetails.password);
+        await this.clickElement(this.btnSignIn);
+        await this.page.waitForNavigation();
+    }
+    getFirstHearingDate() {
+        const today = new Date();
+        const dateNow = today.getDate()+1;
+        const monthNow = today.getMonth()+1;
+        console.log(dateNow+'/'+monthNow);
     }
 }

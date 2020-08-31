@@ -7,7 +7,7 @@ Feature: Git Hub Login
     Then  I click on the signin button
     Then  I validate the user profile
     Then I close the browser
-  @SmokeTest1
+  @SmokeTest
   Scenario: Login with Valid credentials
     Given the puppeteer settings are configured
     Then   I launch the URL

@@ -1,4 +1,5 @@
 import {HomePage} from "../pages/home-page";
+import {ProfilePage} from "../pages/profile-page";
 
 const { Given,Then } = require('cucumber');
 var expect = require('chai').expect;
@@ -6,6 +7,7 @@ var expect = require('chai').expect;
 var {setDefaultTimeout} = require('cucumber');
 setDefaultTimeout(60 * 1000);
 const homePage = new HomePage();
+const profilePage = new ProfilePage();
 
 Given(/^the puppeteer settings are configured$/, async () => {
     await homePage.open();
@@ -29,7 +31,7 @@ Then(/^I validate the user profile$/,async ()=>{
     await homePage.page.waitForSelector(homePage.iconUserProfile);
     await homePage.clickElement(homePage.iconUserProfile);
     await homePage.takeScreenShot(homePage.page);
-    await expect(await homePage.getInnerText(homePage.labelUserName)).to.equal('arunk2493');
+    await expect(await homePage.getInnerText(profilePage.labelUserName)).to.equal('arunk2493');
 });
 Then(/^I close the browser$/,async ()=>{
     await homePage.page.close();

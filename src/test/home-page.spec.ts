@@ -14,20 +14,11 @@ describe( "Sample Form", async ()=>{
 
     it("Google Search",async () => {
         console.log('launched');
-        const userDetails = require('../data/userdata.json');
-        await page.goto('https://github.com/login');
-        console.log('Started');
-        await homePage.enterValue(homePage.txtUserName,userDetails.username);
-        await homePage.enterValue(homePage.txtPassword,userDetails.password);
-        await homePage.clickElement(homePage.btnSignIn);
-        await page.waitForNavigation();
+        await homePage.loginUser();
         const title1 = await page.title();
         console.log('The title is:'+title1);
         await expect(title1).contains('GitHub');
-        await page.waitForSelector(homePage.iconUserProfile);
-        await homePage.clickElement(homePage.iconUserProfile);
-        await homePage.takeScreenShot(page);
-        await expect(await homePage.getInnerText(homePage.labelUserName)).to.equal('arunk2493');
+
     });
     afterEach(async ()=>{
         await page.close();
