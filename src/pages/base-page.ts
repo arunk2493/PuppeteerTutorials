@@ -7,6 +7,11 @@ export default class BasePage {
     txtUserName: string = 'input[name="login"]'; //or input#login_field or #login_field
     txtPassword: string = 'input#password';
     btnSignIn: string = 'input[value="Sign in"]';
+    constructor() {
+    }
+    pageloaded(){
+
+    }
 
     async open() {
         //let browser: Browser;
@@ -52,10 +57,11 @@ export default class BasePage {
         await this.clickElement(this.btnSignIn);
         await this.page.waitForNavigation();
     }
-    getFirstHearingDate() {
-        const today = new Date();
-        const dateNow = today.getDate()+1;
-        const monthNow = today.getMonth()+1;
-        console.log(dateNow+'/'+monthNow);
+    async openMock() {
+        let browser: Browser;
+        browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--lang=it-IT,it'], headless: false, slowMo: 0});
+        this.page = await browser.newPage();
+        this.page.setViewport({ width: 1366, height: 768});
+        return this.page
     }
 }

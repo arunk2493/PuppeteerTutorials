@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Haben oder haben",
+    "author": "Fric Eromm",
+    "genre": "philosophy",
+    "price": "7.95",
+    "rating": "★★★★☆",
+    "stock": "1"
+  },
+  {
+    "id": 2,
+    "title": "Parry Hotter",
+    "author": "J/K Rowlin'",
+    "genre": "erotic",
+    "price": "9.95",
+    "rating": "★★★☆☆",
+    "stock": "1"
+  },
+  {
+    "id": 3,
+    "title": "Laughterhouse-Five",
+    "author": "Truk Tugennov",
+    "genre": "scifi",
+    "price": "9.95",
+    "rating": "★★★☆☆",
+    "stock": "1"
+  },
+  {
+    "id": 4,
+    "title": "To Mock a Killingbird",
+    "author": "Larper Hee",
+    "genre": "novel",
+    "price": "9.95",
+    "rating": "★★☆☆☆",
+    "stock": "1"
+  },
+  {
+    "id": 5,
+    "title": "1498",
+    "author": "Gorge Norwell",
+    "genre": "scifi",
+    "price": "9.95",
+    "rating": "★★★★☆",
+    "stock": "1"
+  }
+]

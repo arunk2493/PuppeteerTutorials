@@ -19,6 +19,7 @@ Then(/^I give the valid username and password$/,async ()=>{
     const userDetails = require('../data/userdata.json');
     await homePage.enterValue(homePage.txtUserName,userDetails.username);
     await homePage.enterValue(homePage.txtPassword,userDetails.password);
+    await homePage.loginUser();
 });
 Then(/^I click on the signin button$/,async ()=>{
     await homePage.clickElement(homePage.btnSignIn);
