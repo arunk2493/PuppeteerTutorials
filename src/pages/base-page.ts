@@ -1,6 +1,7 @@
 import {Browser,Page} from "puppeteer";
 const puppeteer = require("puppeteer");
 
+
 export default class BasePage {
     page:Page;
     browser: Browser;
