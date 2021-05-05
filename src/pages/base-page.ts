@@ -16,7 +16,7 @@ export default class BasePage {
 
     async open() {
         //let browser: Browser;
-        this.browser = await puppeteer.launch({headless: true, slowMo: 10,args:[
+        this.browser = await puppeteer.launch({headless: false, slowMo: 10,args:[
                 '--start-fullscreen' // you can also use '--start-fullscreen'
             ]});
         this.page = await this.browser.newPage();

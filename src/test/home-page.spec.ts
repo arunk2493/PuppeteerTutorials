@@ -18,6 +18,7 @@ describe( "Sample Form", async ()=>{
         const title1 = await page.title();
         console.log('The title is:'+title1);
         await expect(title1).contains('GitHub');
+        await homePage.clickElement(homePage.iconUserProfile);
 
     });
     afterEach(async ()=>{

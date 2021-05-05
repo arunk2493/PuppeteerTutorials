@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 (async () => {
-    const browser = await puppeteer.launch({headless: false,args:[
-            '--start-fullscreen' // //launch chromium *
+    const browser = await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:[
+            '--start-fullscreen','it-IT' // //launch chromium *
         ]});
     const page = await browser.newPage(); //create a new blank page*
     await page.setViewport({width: 1366, height: 768}); // sets the height and width of the window
@@ -16,7 +16,7 @@ const puppeteer = require("puppeteer");
     const value =  await page.evaluate(n => n.innerText, errorMsg);
     console.log("The Error Message:"+value);
     await page.screenshot({path: '/Users/arunkumaraswamy/Documents/projects/Study/Puppeteer/PuppeteerTutorials/screenshots/demo-file_1.png'});
-    await page.pdf({path: '/Users/arunkumaraswamy/Documents/projects/Study/Puppeteer/PuppeteerTutorials/screenshots/demo-file_1.pdf',format:'A4'});
+    await page.pdf({path: '/Users/arunkumaraswamy/Documents/projects/Study/Puppeteer/PuppeteerTutorials/screenshots/demo-file_2s.pdf',format:'A4'});
     //Dismiss this message
     await browser.close();
 })();

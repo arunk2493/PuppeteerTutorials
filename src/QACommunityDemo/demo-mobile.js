@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const iPhone = puppeteer.devices['iPhone 6'];
+//const iPhone = puppeteer.devices['iPhone X'];
 
 puppeteer.launch({headless:false,slowMo:100}).then(async browser => {
     const page = await browser.newPage();
